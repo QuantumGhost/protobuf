@@ -1168,7 +1168,7 @@ PROTOBUF_NODISCARD const char* PackedEnumParser(void* object, const char* ptr,
                                                 InternalMetadata* metadata,
                                                 int field_num) {
   return ctx->ReadPackedVarint(
-      ptr, [object, is_valid, metadata, field_num](uint64_t val) {
+      ptr, [object, is_valid, metadata, field_num](int32_t val) {
         if (is_valid(val)) {
           static_cast<RepeatedField<int>*>(object)->Add(val);
         } else {
